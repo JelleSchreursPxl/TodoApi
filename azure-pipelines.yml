@@ -27,14 +27,15 @@ steps:
   parameters:
     buildConfiguration: 'Debug'
 
-- task: VSTest@2
-  displayName: "Run unit tests in the project"  
-  inputs:   
-    testSelector: "testAssemblies"    
-    searchFolder: '$(System.DefaultWorkingDirectory)'    
-    resultsFolder: '$(Agent.TempDirectory)\TestResults'    
-    codeCoverageEnabled: True    
-    publishRunAttachments: true 
+# ------- No Tests to run in this project 
+# - task: VSTest@2
+#   displayName: "Run unit tests in the project"  
+#   inputs:   
+#     testSelector: "testAssemblies"    
+#     searchFolder: '$(System.DefaultWorkingDirectory)'    
+#     resultsFolder: '$(Agent.TempDirectory)\TestResults'    
+#     codeCoverageEnabled: True    
+#     publishRunAttachments: true 
 
 - template: templates/build.yml
   parameters:
