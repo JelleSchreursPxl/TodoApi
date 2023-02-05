@@ -36,6 +36,15 @@ steps:
     arguments: '--no-restore --configuration Release'
     projects: '**/*.csproj'
 
+- task: VSTest@2
+  displayName: "Run unitTests"  
+  inputs:   
+    testSelector: "testAssemblies"    
+    searchFolder: '$(System.DefaultWorkingDirectory)'    
+    resultsFolder: '$(Agent.TempDirectory)\TestResults'    
+    codeCoverageEnabled: True    
+    publishRunAttachments: true 
+
 - task: DotNetCoreClI@2
   displayName: 'Publish the project - Release'
   inputs:
