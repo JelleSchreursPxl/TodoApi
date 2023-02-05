@@ -45,6 +45,6 @@ steps:
     arguments: '--no-build --configuration Release --output $(Build.ArtifactStagingDirectory)/Release'
     zipAfterPublish: true
 
-# - task: PublishBuilderArtifacts@1
-#   displayName: 'Publish Artifact: drop'
-#   condition: succeeded()
+- task: PublishBuilderArtifacts@1
+  displayName: 'Publish Artifact: drop'
+  condition: succeeded()
